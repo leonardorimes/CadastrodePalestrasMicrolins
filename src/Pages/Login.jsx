@@ -1,4 +1,4 @@
-import styles from "./Cadastro.module.css"
+import styles from "./Login.module.css"
 
 // img
 import PdpLogin from "../img/pdp.png"
