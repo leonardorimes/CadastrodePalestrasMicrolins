@@ -1,0 +1,14 @@
+.button {
+  background: linear-gradient(180deg, #e34f4f 0%, rgba(194, 58, 58, 0.65) 100%);
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: linear-gradient(180deg, #e34f4f 0%, rgb(248, 3, 3) 100%);
+}

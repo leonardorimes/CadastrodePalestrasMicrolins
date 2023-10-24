@@ -1,0 +1,34 @@
+.container {
+  padding-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button {
+  margin-top: 1.5rem;
+  width: 15rem;
+  height: 5.5rem;
+}
+
+.form input + input {
+  margin-top: 1rem;
+}
+
+.form button + button {
+  margin-top: 1rem;
+}

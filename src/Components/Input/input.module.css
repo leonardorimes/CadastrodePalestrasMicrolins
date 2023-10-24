@@ -1,0 +1,15 @@
+.input {
+  width: 40rem;
+  height: 3.5rem;
+  background: #d9d9d9;
+  color: rgba(119, 103, 103, 0.71);
+  font-family: Inter;
+  font-size: 1.4rem;
+  font-weight: 40rem;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+}
+.input:focus {
+  outline: 0.2px solid #a11231;
+}
