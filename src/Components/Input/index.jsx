@@ -1,9 +1,14 @@
-import styles from './input.module.css'
+import styles from "./input.module.css";
 
-const Input = ({placeholder, type}) => {
+const Input = ({ placeholder, type, ...rest }) => {
   return (
-    <input type={type} placeholder={placeholder} className={styles.input} />
-  )
-}
+    <input
+      type={type}
+      placeholder={placeholder}
+      className={styles.input}
+      {...rest}
+    />
+  );
+};
 
-export default Input
+export default Input;

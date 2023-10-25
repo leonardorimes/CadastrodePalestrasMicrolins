@@ -4,7 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  //   updateProfile,
+  updateProfile,
   //   signOut,
 } from "firebase/auth";
 
@@ -40,10 +40,29 @@ export const useAuthentication = () => {
         data.password
       );
 
+      await updateProfile(user, {
+        displayName: data.email,
+      });
+
       setLoading(false);
       return user;
     } catch (error) {
       console.log(error.message);
+      console.log(typeof error.message);
+
+      let systemErrorMessage;
+
+      if (error.message.includes("Password")) {
+        systemErrorMessage = "A senha precisa conter ao menos 6 caracteres";
+      } else if (error.message.includes("email-already-in-use")) {
+        systemErrorMessage = "Email já cadastrado";
+      } else {
+        systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde";
+      }
+
+      setLoading(false);
+
+      setError(systemErrorMessage);
     }
   };
 
@@ -73,9 +92,15 @@ export const useAuthentication = () => {
     }
   };
 
+  useEffect(() => {
+    return () => setCancelled(true);
+  });
+
   return {
     auth,
     createUser,
     login,
+    error,
+    loading,
   };
 };
