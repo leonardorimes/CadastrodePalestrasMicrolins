@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Load from "./Components/load"
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -24,7 +25,7 @@ function App() {
   }, [auth])
 
   if(loadingUser) {
-    return <p> Carregando ...</p>
+    return <Load />
   }
 
   return (
