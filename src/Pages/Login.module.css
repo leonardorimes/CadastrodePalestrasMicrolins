@@ -25,6 +25,28 @@
   height: 5.5rem;
 }
 
+a {
+  margin-top: 1.5rem;
+  width: 15rem;
+  height: 5.5rem;
+  background: linear-gradient(180deg, #e34f4f 0%, rgba(194, 58, 58, 0.65) 100%);
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+a:hover {
+  background: linear-gradient(180deg, #e34f4f 0%, rgb(248, 3, 3) 100%);
+}
+
 .form input + input {
   margin-top: 1rem;
 }

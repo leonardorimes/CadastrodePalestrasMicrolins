@@ -10,6 +10,9 @@ import PdpLogin from "../img/pdp.png";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
 
+// router
+import {Link} from "react-router-dom"
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -56,9 +59,12 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button title="Entrar" />
-        <Button title="Criar" />
+        {!loading  && <Button title="Entrar" />}
       </form>
+      <Link to="/cadastro">
+                     Criar Conta
+      </Link>
+      {error && <p> {error}  </p> }
     </div>
   );
 };

@@ -73,8 +73,6 @@ const Cadastro = () => {
         />
 
         {!loading && <Button title="Criar conta" />}
-        <p> {email} </p>
-
         {error && <p className="error"> {error} </p>}
       </form>
     </div>
