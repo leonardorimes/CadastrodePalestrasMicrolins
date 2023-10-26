@@ -48,35 +48,29 @@ const Cadastro = () => {
       <img src={PdpLogin} alt="Logo PDP MICROLINS" />
       <h1> Criar Conta </h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <label>
-          <Input
-            placeholder="Digite o email"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
+        <Input
+          placeholder="Digite o email"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <label>
-          <Input
-            placeholder="Digite a senha"
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+        <Input
+          placeholder="Digite a senha"
+          type="password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <label>
-          <Input
-            placeholder="Confirme a senha"
-            type="password"
-            required
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </label>
+        <Input
+          placeholder="Confirme a senha"
+          type="password"
+          required
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
 
         {!loading && <Button title="Criar conta" />}
         <p> {email} </p>
