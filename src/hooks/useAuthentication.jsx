@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  signOut,
   //   signOut,
 } from "firebase/auth";
 
@@ -25,6 +26,8 @@ export const useAuthentication = () => {
       return;
     }
   }
+
+
 
   // register
   const createUser = async (data) => {
@@ -92,6 +95,14 @@ export const useAuthentication = () => {
     }
   };
 
+  // logout
+
+  const logout = () => {
+    checkIfIsCancelled()
+
+    signOut(auth)
+  }
+
   useEffect(() => {
     return () => setCancelled(true);
   });
@@ -102,5 +113,6 @@ export const useAuthentication = () => {
     login,
     error,
     loading,
+    logout
   };
 };
