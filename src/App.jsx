@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Load from "./Components/load"
+import Load from "./Components/load";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -11,21 +11,22 @@ import Login from "./Pages/Login";
 import Cadastro from "./Pages/Cadastro";
 import { useAuthentication } from "./hooks/useAuthentication";
 import { onAuthStateChanged } from "firebase/auth";
+import Novapalestra from "./Pages/NovaPalestra";
 
 function App() {
   const [user, setUser] = useState(undefined);
-  const {auth} = useAuthentication();
+  const { auth } = useAuthentication();
 
-  const loadingUser = user === undefined
+  const loadingUser = user === undefined;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setUser(user)
-    })
-  }, [auth])
+      setUser(user);
+    });
+  }, [auth]);
 
-  if(loadingUser) {
-    return <Load />
+  if (loadingUser) {
+    return <Load />;
   }
 
   return (
@@ -34,9 +35,19 @@ function App() {
         <BrowserRouter>
           <div className="container">
             <Routes>
-              <Route path="/login" element={user? <Home /> : <Login/>} />
-              <Route path="/" element={user ?  <Home /> : <Navigate to="/login" />} />
-              <Route path="/cadastro" element={user? <Home /> : <Cadastro/>} />
+              <Route path="/login" element={user ? <Home /> : <Login />} />
+              <Route
+                path="/"
+                element={user ? <Home /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/cadastro"
+                element={user ? <Home /> : <Cadastro />}
+              />
+              <Route
+                path="/novapalestra"
+                element={user ? <Novapalestra /> : <Login />}
+              />
             </Routes>
           </div>
         </BrowserRouter>
