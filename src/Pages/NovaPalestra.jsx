@@ -4,16 +4,17 @@ import Header from "../components/Header";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
 
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../context/AuthContext";
 import { useInsertDocument } from "../hooks/useInsertDocument";
 
-const Novapalestra = () => {
+const NovaPalestra = () => {
+  const navigate = useNavigate();
   const [palestra, setPalestra] = useState("");
   const [data, setData] = useState("");
   const [hora, setHora] = useState("");
-  const [vagas, setVagas] = useState("");
+  const [vagas, setVagas] = useState(15);
   const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
@@ -21,19 +22,24 @@ const Novapalestra = () => {
   const { insertDocument, response } = useInsertDocument("palestras");
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormError("");
     if (!palestra || !data || !hora || !vagas) {
+      console.log(palestra, data, hora, vagas);
       setFormError("Por favor preencha todos os campos!");
     }
-  };
 
-  insertDocument({
-    palestra,
-    data,
-    hora,
-    vagas,
-    uid: user.uid,
-    createdBy: user.displayName,
-  });
+    insertDocument({
+      palestra,
+      data,
+      hora,
+      vagas,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+    alert("oi");
+  };
 
   return (
     <div className={styles.container}>
@@ -88,4 +94,4 @@ const Novapalestra = () => {
   );
 };
 
-export default Novapalestra;
+export default NovaPalestra;

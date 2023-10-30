@@ -1,3 +1,5 @@
+import { useAuthentication } from "./hooks/useAuthentication";
+import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Load from "./Components/load";
@@ -9,8 +11,6 @@ import { AuthProvider } from "./context/AuthContext";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Cadastro from "./Pages/Cadastro";
-import { useAuthentication } from "./hooks/useAuthentication";
-import { onAuthStateChanged } from "firebase/auth";
 import Novapalestra from "./Pages/NovaPalestra";
 
 function App() {
@@ -35,18 +35,23 @@ function App() {
         <BrowserRouter>
           <div className="container">
             <Routes>
-              <Route path="/login" element={user ? <Home /> : <Login />} />
               <Route
                 path="/"
                 element={user ? <Home /> : <Navigate to="/login" />}
               />
+
+              <Route
+                path="/login"
+                element={!user ? <Login /> : <Navigate to="/" />}
+              />
+
               <Route
                 path="/cadastro"
-                element={user ? <Home /> : <Cadastro />}
+                element={!user ? <Cadastro /> : <Navigate to="/" />}
               />
               <Route
                 path="/novapalestra"
-                element={user ? <Novapalestra /> : <Login />}
+                element={user ? <Novapalestra /> : <Navigate to="/login" />}
               />
             </Routes>
           </div>

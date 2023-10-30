@@ -23,4 +23,5 @@ body {
 .error {
   background-color: #dc3545;
   color: white;
+  padding: 30px;
 }
