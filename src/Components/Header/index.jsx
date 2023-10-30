@@ -14,7 +14,14 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <p>Olá, {user.displayName}</p>
+      <span>
+        Olá, <Link to="/">{user.displayName} </Link>{" "}
+      </span>
+      {user.uid == "QY4KiPApnJaZ7Y3w5NlSsuzz18q2" ? (
+        <Link to="/novapalestra">Cadastrar palestra</Link>
+      ) : (
+        ""
+      )}
       <Link onClick={logout}> Sair </Link>
     </header>
   );

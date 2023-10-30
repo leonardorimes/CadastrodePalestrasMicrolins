@@ -1,10 +1,19 @@
 import Header from "../Components/Header";
+import Card from "../components/Card";
+
+import styles from "./Home.module.css";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <div>Home</div>
+      <div className={styles.home}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 };

@@ -6,8 +6,14 @@
   font-size: 25px;
 }
 
+.header span {
+  display: flex;
+  align-items: baseline;
+}
+
 .header a {
   background: none;
+  font-size: 14px;
 }
 
 .header a:hover {

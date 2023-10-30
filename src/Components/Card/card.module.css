@@ -1,0 +1,31 @@
+.card {
+  background-color: #d9d9d9;
+  width: 25rem;
+
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.content {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content h1 {
+  color: black;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.content span {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
