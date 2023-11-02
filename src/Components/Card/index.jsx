@@ -1,16 +1,21 @@
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import Styles from "./card.module.css";
 
-const Card = () => {
+const Card = ({ pal }) => {
+  const handleDate = (date) => {
+    return date.split("-").reverse().join("/");
+  };
+
   return (
     <div className={Styles.card}>
       <div className={Styles.content}>
-        <h1>Empreendedorismo</h1>
-        <p>26/05</p>
-        <p>18:00</p>
+        <h1>{pal.palestra} </h1>
+        <p>{handleDate(pal.data)}</p>
+        <p>{pal.hora}</p>
         <span>
-          <p>vagas: 2 de 15 </p>
-          <Button title="Inscrever-se" />
+          <p>vagas: 2 de {pal.vagas}</p>
+          <Link to="/confirmarpalestra">Inscrever-se</Link>
         </span>
       </div>
     </div>

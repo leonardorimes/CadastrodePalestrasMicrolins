@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 
-import { collection, query, orderBy, onSnapShot } from "firebase/firestore";
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 
-export const useFetchDocuments = (docCollection, uid = null) => {
+export const useFetchDocuments = (docCollection) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -22,7 +22,7 @@ export const useFetchDocuments = (docCollection, uid = null) => {
         let q;
         q = await query(collectionRef, orderBy("createdAt", "desc"));
 
-        await onSnapShot(q, (querySnapshot) => {
+        await onSnapshot(q, (querySnapshot) => {
           setDocuments(
             querySnapshot.docs.map((doc) => ({
               id: doc.id,
@@ -30,6 +30,7 @@ export const useFetchDocuments = (docCollection, uid = null) => {
             }))
           );
         });
+        setLoading(false);
       } catch (error) {
         console.log(error);
         setError(error.message);
@@ -38,11 +39,13 @@ export const useFetchDocuments = (docCollection, uid = null) => {
       }
     }
     loadData();
-  }, [docCollection, uid, cancelled]);
+  }, [docCollection, cancelled]);
 
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
+
+  console.log(documents);
 
   return { documents, loading, error };
 };

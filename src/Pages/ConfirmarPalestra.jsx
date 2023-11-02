@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../context/AuthContext";
 import { useInsertDocument } from "../hooks/useInsertDocument";
 
-const NovaPalestra = () => {
+const ConfirmarPalestra = () => {
   const navigate = useNavigate();
   const [palestra, setPalestra] = useState("");
   const [data, setData] = useState("");
@@ -42,7 +42,7 @@ const NovaPalestra = () => {
   return (
     <div className={styles.container}>
       <Header />
-      <h1>Cadastre nova palestra</h1>
+      <h1>Confirmação</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label>
           Palestra
@@ -92,4 +92,4 @@ const NovaPalestra = () => {
   );
 };
 
-export default NovaPalestra;
+export default ConfirmarPalestra;
