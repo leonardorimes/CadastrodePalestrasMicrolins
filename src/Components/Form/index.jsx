@@ -3,10 +3,12 @@ import styles from "./Form.module.css";
 import Input from "../Input";
 import Button from "../Button";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
+
+import { useNavigate } from "react-router-dom";
 
 const Form = ({ palestra, data, hora, vagas, ...props }) => {
   const { insertDocument, response } = useInsertDocument("palestras");
@@ -18,6 +20,7 @@ const Form = ({ palestra, data, hora, vagas, ...props }) => {
   const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,15 +30,30 @@ const Form = ({ palestra, data, hora, vagas, ...props }) => {
     }
     console.log(inputpalestra, inputdata, inputhora, inputvagas);
 
-    insertDocument({
-      palestra: inputpalestra,
-      data: inputdata,
-      hora: inputhora,
-      vagas: inputvagas,
-      uid: user.uid,
-      createdBy: user.displayName,
-    });
+    try {
+      insertDocument({
+        palestra: inputpalestra,
+        data: inputdata,
+        hora: inputhora,
+        vagas: inputvagas,
+        uid: user.uid,
+        createdBy: user.displayName,
+      });
+
+      alert("Palestra cadastrada com sucesso");
+    } catch (error) {
+      console.log(error);
+    }
+
+    navigate("/");
   };
+
+  useEffect(() => {
+    setInputpalestra(inputpalestra);
+    setInputdata(data);
+    setInputhora(inputhora);
+    setInputVagas(inputvagas);
+  }, [data, inputpalestra, inputhora, inputvagas]);
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
