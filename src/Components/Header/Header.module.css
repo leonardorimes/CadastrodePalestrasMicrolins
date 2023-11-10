@@ -4,11 +4,13 @@
   align-items: center;
   color: white;
   font-size: 25px;
+  margin-bottom: 5rem;
 }
 
 .header span {
   display: flex;
   align-items: baseline;
+  gap: 1rem;
 }
 
 .header a {

@@ -1,6 +1,7 @@
 .container {
   padding-top: 5%;
   width: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,8 +9,8 @@
 }
 
 .container img {
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
 }
 
 .form {
@@ -21,14 +22,14 @@
 
 .form button {
   margin-top: 1.5rem;
-  width: 15rem;
-  height: 5.5rem;
+  width: 12rem;
+  height: 4rem;
 }
 
 a {
   margin-top: 1.5rem;
-  width: 15rem;
-  height: 5.5rem;
+  width: 12rem;
+  height: 4rem;
   background: linear-gradient(180deg, #e34f4f 0%, rgba(194, 58, 58, 0.65) 100%);
   border: none;
   color: #fff;
@@ -61,4 +62,22 @@ h1 {
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .container img {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .form button {
+    width: 12rem;
+    height: 4rem;
+  }
+
+  a {
+    width: 12rem;
+    height: 4rem;
+    font-size: 1rem;
+  }
 }

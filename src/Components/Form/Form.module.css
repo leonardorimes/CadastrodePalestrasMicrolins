@@ -15,5 +15,15 @@
 }
 
 .form button {
-  width: 120px;
+  width: 13rem;
+}
+
+.form input {
+  width: 2rem;
+}
+
+@media (max-width: 600px) {
+  .form input {
+    min-width: 80%;
+  }
 }

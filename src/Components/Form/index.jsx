@@ -36,6 +36,7 @@ const Form = ({ palestra, data, hora, vagas, ...props }) => {
         data: inputdata,
         hora: inputhora,
         vagas: inputvagas,
+        vagasOcupadas: [],
         uid: user.uid,
         createdBy: user.displayName,
       });

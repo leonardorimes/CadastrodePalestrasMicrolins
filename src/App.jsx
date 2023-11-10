@@ -12,7 +12,6 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Cadastro from "./Pages/Cadastro";
 import Novapalestra from "./Pages/NovaPalestra";
-import ConfirmarPalestra from "./Pages/ConfirmarPalestra";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -53,13 +52,6 @@ function App() {
               <Route
                 path="/novapalestra"
                 element={user ? <Novapalestra /> : <Navigate to="/login" />}
-              />
-
-              <Route
-                path="/confirmarpalestra"
-                element={
-                  user ? <ConfirmarPalestra /> : <Navigate to="/login" />
-                }
               />
             </Routes>
           </div>

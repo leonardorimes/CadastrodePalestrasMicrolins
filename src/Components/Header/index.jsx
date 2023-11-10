@@ -15,9 +15,10 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <span>
-        Olá, <Link to="/">{user.displayName} </Link>{" "}
+        Olá,
+        <Link to="/">{user.displayName} </Link>
       </span>
-      {user.uid == "QY4KiPApnJaZ7Y3w5NlSsuzz18q2" ? (
+      {user.uid == "1B08evtyPVNriz1jviCEA76RlFo2" ? (
         <Link to="/novapalestra">Cadastrar palestra</Link>
       ) : (
         ""

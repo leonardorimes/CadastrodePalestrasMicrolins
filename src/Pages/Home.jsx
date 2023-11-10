@@ -18,7 +18,10 @@ const Home = () => {
       <Header />
       <div className={styles.home}>
         {loading && <Load />}
-        {palestras && palestras.map((palestra) => <Card pal={palestra} />)}
+        {palestras &&
+          palestras.map((palestra) => (
+            <Card pal={palestra} key={palestra.id} />
+          ))}
       </div>
     </div>
   );

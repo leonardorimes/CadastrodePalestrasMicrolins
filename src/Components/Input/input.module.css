@@ -1,5 +1,5 @@
 .input {
-  width: 40rem;
+  min-width: 40rem;
   height: 3.5rem;
   background: #d9d9d9;
   color: rgba(119, 103, 103, 0.71);
@@ -13,4 +13,10 @@
 
 .input:focus {
   outline: 0.2px solid #a11231;
+}
+
+@media (max-width: 600px) {
+  .input {
+    min-width: 6rem;
+  }
 }
