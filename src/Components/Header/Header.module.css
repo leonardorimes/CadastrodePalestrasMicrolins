@@ -1,4 +1,4 @@
-.header {
+.nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -7,18 +7,60 @@
   margin-bottom: 5rem;
 }
 
-.header span {
+.nav span {
   display: flex;
   align-items: baseline;
   gap: 1rem;
 }
 
-.header a {
+.nav a {
   background: none;
   font-size: 14px;
 }
 
-.header a:hover {
+.nav a:hover {
   background: none;
   color: red;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarMenu svg {
+  font-size: 3rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: none;
+}
+
+.navbarMenu a {
+  background: none;
+  font-size: 14px;
+}
+
+.navbarItems a {
+  background: none;
+  color: black;
+  font-size: 8px;
+}
+
+.navbarItems a:hover {
+  background: none;
+}
+
+@media (max-width: 600px) {
+  .navbarMenu svg {
+    cursor: pointer;
+    display: flex;
+    background-color: black;
+  }
+
+  .nav {
+    display: none;
+  }
 }

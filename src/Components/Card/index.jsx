@@ -6,15 +6,14 @@ import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import { useAuthValue } from "../../context/AuthContext";
 
 const Card = ({ pal }) => {
+  const { user } = useAuthValue();
   const handleDate = (date) => {
     return date.split("-").reverse().join("/");
   };
 
   const { updateDocument, response } = useUpdateDocument("palestras");
-  const { user } = useAuthValue();
 
   const handleSubmit = () => {
-    console.log(user);
     if (pal.vagasOcupadas.includes(user.email)) {
       alert("Você já está cadastrado na palestra");
       return;
@@ -50,6 +49,11 @@ const Card = ({ pal }) => {
           <p>vagas: {pal.vagas} de 15</p>
           <Link onClick={handleSubmit}>Inscrever-se</Link>
         </span>
+        {user.uid == "1B08evtyPVNriz1jviCEA76RlFo2" ? (
+          <Link onClick={handleSubmit}>Excluir</Link>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
