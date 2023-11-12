@@ -9,6 +9,7 @@
   border: none;
   outline: none;
   border-radius: 0.3rem;
+  text-indent: 10px;
 }
 
 .input:focus {

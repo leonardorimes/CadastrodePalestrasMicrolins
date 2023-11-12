@@ -4,6 +4,7 @@ import Styles from "./card.module.css";
 
 import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import { useAuthValue } from "../../context/AuthContext";
+import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 
 const Card = ({ pal }) => {
   const { user } = useAuthValue();
@@ -12,6 +13,8 @@ const Card = ({ pal }) => {
   };
 
   const { updateDocument, response } = useUpdateDocument("palestras");
+
+  const { deleteDocument } = useDeleteDocument("palestras");
 
   const handleSubmit = () => {
     if (pal.vagasOcupadas.includes(user.email)) {
@@ -50,7 +53,7 @@ const Card = ({ pal }) => {
           <Link onClick={handleSubmit}>Inscrever-se</Link>
         </span>
         {user.uid == "1B08evtyPVNriz1jviCEA76RlFo2" ? (
-          <Link onClick={handleSubmit}>Excluir</Link>
+          <Link onClick={() => deleteDocument(pal.id)}>Excluir</Link>
         ) : (
           ""
         )}

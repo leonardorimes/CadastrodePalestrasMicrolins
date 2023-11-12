@@ -68,16 +68,7 @@ const Form = ({ palestra, data, hora, vagas, ...props }) => {
           required
         />
       </label>
-      <label>
-        Dia
-        <Input
-          type="date"
-          placeholder="Digite aqui o dia da palestra"
-          onChange={(e) => setInputdata(e.target.value)}
-          value={data ? data : inputdata}
-          required
-        />
-      </label>
+
       <label>
         Hora
         <Input
@@ -85,6 +76,16 @@ const Form = ({ palestra, data, hora, vagas, ...props }) => {
           placeholder="Digite aqui o horário da palestra"
           onChange={(e) => setInputhora(e.target.value)}
           value={hora ? hora : inputhora}
+          required
+        />
+      </label>
+      <label>
+        Dia
+        <Input
+          type="date"
+          placeholder="Digite aqui o dia da palestra"
+          onChange={(e) => setInputdata(e.target.value)}
+          value={data ? data : inputdata}
           required
         />
       </label>
