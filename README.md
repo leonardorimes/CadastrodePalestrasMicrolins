@@ -1,8 +1,14 @@
-# React + Vite
+# Sistema de Gerenciamento de Cadastros de Alunos em Workshops Escolares
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um sistema desenvolvido em React e Firebase para gerenciar os cadastros dos alunos nos workshops da escola. Ele oferece uma interface intuitiva e funcionalidades de backend confiáveis para administrar as informações dos participantes.
 
-Currently, two official plugins are available:
+## Funcionalidades Principais
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cadastro de Alunos:** Registre informações dos alunos participantes nos workshops.
+- **Gestão de Dados:** Utilize o Firebase para armazenar e gerenciar os dados dos alunos de forma segura e escalável.
+- **Integração com React:** A interface foi construída utilizando React, explorando contextos, reducers e hooks para uma experiência otimizada.
+
+## Tecnologias Utilizadas
+
+- **React:** Frontend baseado em React para uma interatividade fluida e responsiva.
+- **Firebase:** Utilizado como backend para armazenamento seguro e ágil dos dados.
