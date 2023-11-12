@@ -27,8 +27,6 @@ export const useAuthentication = () => {
     }
   }
 
-
-
   // register
   const createUser = async (data) => {
     checkIfIsCancelled();
@@ -50,9 +48,6 @@ export const useAuthentication = () => {
       setLoading(false);
       return user;
     } catch (error) {
-      console.log(error.message);
-      console.log(typeof error.message);
-
       let systemErrorMessage;
 
       if (error.message.includes("Password")) {
@@ -98,10 +93,10 @@ export const useAuthentication = () => {
   // logout
 
   const logout = () => {
-    checkIfIsCancelled()
+    checkIfIsCancelled();
 
-    signOut(auth)
-  }
+    signOut(auth);
+  };
 
   useEffect(() => {
     return () => setCancelled(true);
@@ -113,6 +108,6 @@ export const useAuthentication = () => {
     login,
     error,
     loading,
-    logout
+    logout,
   };
 };

@@ -6,12 +6,8 @@ import styles from "./Home.module.css";
 
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
 
-import { useNavigate } from "react-router-dom";
-
 const Home = () => {
   const { documents: palestras, loading } = useFetchDocuments("palestras");
-
-  const navigate = useNavigate();
 
   return (
     <div>

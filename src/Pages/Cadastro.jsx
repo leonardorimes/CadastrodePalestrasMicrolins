@@ -26,15 +26,13 @@ const Cadastro = () => {
       email,
       password,
     };
-    console.log(user);
+
     if (password !== password) {
       setError("As senhas precisam ser iguais");
       return;
     }
 
     const res = createUser(user);
-
-    console.log(res);
   };
 
   useEffect(() => {
