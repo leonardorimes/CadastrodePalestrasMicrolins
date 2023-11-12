@@ -1,4 +1,5 @@
 # Sistema de Gerenciamento de Cadastros de Alunos em Workshops Escolares
+[screen-capture (1).webm](https://github.com/leonardorimes/CadastrodePalestrasMicrolins/assets/67798915/cdd0f456-36c2-4143-a631-c6808fafda17)
 
 Este projeto é um sistema desenvolvido em React e Firebase para gerenciar os cadastros dos alunos nos workshops da escola. Ele oferece uma interface intuitiva e funcionalidades de backend confiáveis para administrar as informações dos participantes.
 
